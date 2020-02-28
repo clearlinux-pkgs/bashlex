@@ -4,7 +4,7 @@
 #
 Name     : bashlex
 Version  : 0.14
-Release  : 8
+Release  : 9
 URL      : https://files.pythonhosted.org/packages/e4/27/c639cb10b965cf4fb5a3b9a9786ecd07edb681522e0d93bfc1ce8704f9d8/bashlex-0.14.tar.gz
 Source0  : https://files.pythonhosted.org/packages/e4/27/c639cb10b965cf4fb5a3b9a9786ecd07edb681522e0d93bfc1ce8704f9d8/bashlex-0.14.tar.gz
 Summary  : Python parser for bash
@@ -16,8 +16,15 @@ Requires: bashlex-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
 
 %description
-# bashlex - Python parser for bash
-[![Build Status](https://travis-ci.org/idank/bashlex.svg?branch=master)](https://travis-ci.org/idank/bashlex)
+bashlex is a Python port of the parser used internally by GNU bash.
+
+For the most part it's transliterated from C, the major differences are:
+
+1. it does not execute anything
+2. it is reentrant
+3. it generates a complete AST
+
+See https://github.com/idank/bashlex/blob/master/README.md for more info.
 
 %package license
 Summary: license components for the bashlex package.
@@ -40,6 +47,7 @@ python components for the bashlex package.
 Summary: python3 components for the bashlex package.
 Group: Default
 Requires: python3-core
+Provides: pypi(bashlex)
 
 %description python3
 python3 components for the bashlex package.
@@ -47,13 +55,15 @@ python3 components for the bashlex package.
 
 %prep
 %setup -q -n bashlex-0.14
+cd %{_builddir}/bashlex-0.14
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1570827583
+export SOURCE_DATE_EPOCH=1582849894
+# -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
