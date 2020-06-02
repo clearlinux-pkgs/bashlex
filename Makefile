@@ -1,5 +1,5 @@
 PKG_NAME := bashlex
-URL = https://files.pythonhosted.org/packages/e4/27/c639cb10b965cf4fb5a3b9a9786ecd07edb681522e0d93bfc1ce8704f9d8/bashlex-0.14.tar.gz
+URL = https://files.pythonhosted.org/packages/c1/0d/ff84a5cf5822b12d77ab08ab91b2b00550a7ca742aa9d31381b7c88deb0f/bashlex-0.15.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
