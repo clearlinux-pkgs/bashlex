@@ -4,7 +4,7 @@
 #
 Name     : bashlex
 Version  : 0.15
-Release  : 11
+Release  : 12
 URL      : https://files.pythonhosted.org/packages/c1/0d/ff84a5cf5822b12d77ab08ab91b2b00550a7ca742aa9d31381b7c88deb0f/bashlex-0.15.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c1/0d/ff84a5cf5822b12d77ab08ab91b2b00550a7ca742aa9d31381b7c88deb0f/bashlex-0.15.tar.gz
 Summary  : Python parser for bash
